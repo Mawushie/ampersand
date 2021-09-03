@@ -1,14 +1,13 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 
-const Input = (props) => {
+const PasswordInput = (props) => {
     return (
         <View>
             <View  style = {styles.inputContainer}>
                 <Text style = {styles.inputText}>{props.label}</Text>
-
                 <TextInput style = {styles.inputText2} placeholder = {props.placeholder}
-                          />
+                        secureTextEntry={true}/>
             
             </View>
 
@@ -18,7 +17,7 @@ const Input = (props) => {
     )
 }
 
-export default Input
+export default PasswordInput
 
 const styles = StyleSheet.create({
     inputContainer : {
