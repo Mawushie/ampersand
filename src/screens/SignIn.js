@@ -17,7 +17,7 @@ const SignIn = ({navigation}) => {
             </View>
 
             <View style = {styles.inputContainer}>
-                <Input label = 'Email' placeholder = 'mamhonyah@gmail.com' />
+                <Input label = 'Email' placeholder = 'mamhonyah@gmail.com' require/>
                 <PasswordInput label = 'Password'  placeholder = '.......'/>
             </View>
 
