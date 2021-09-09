@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { View, Text, StyleSheet } from 'react-native'
-import ProfileCard from '../components/ProfileCard'
+import Profile from '../components/Profile'
 
 const QRCodeScreen = () => {
     return (
@@ -16,7 +16,9 @@ const QRCodeScreen = () => {
             </View>
 
             <View style = {styles.profileContainer}>
-                <ProfileCard />
+                <Profile name = 'Mawushie Honyah' jobDescription = 'Software Developer' 
+                             image = {require('../../assets/me.jpg')}
+                            />
             </View>
         
 
@@ -66,7 +68,8 @@ const styles = StyleSheet.create({
 
     profileContainer : {
         flex : 0.3,
-
+        marginHorizontal : 40,
+        paddingTop : 50,
     },
 
     scanQRContainer : {
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
         justifyContent : 'space-between',
         alignItems : 'center',
         marginHorizontal : 40,
-        marginVertical : 15,
+        marginVertical : 12,
     },
 
     border : {

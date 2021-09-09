@@ -55,7 +55,13 @@ export default function App() {
          }
         }               
                         name = 'CODETRAIN' component = {QRCodeScreen}/>
-         <Stack.Screen name = 'My Profile' component = {profileScreen}/>
+         <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
+                                     headerTintColor: '#fff',
+                                    headerTitleStyle: {
+                                      fontSize: 18,
+                                    },}
+                                  }
+                        name = 'My Profile' component = {profileScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
    

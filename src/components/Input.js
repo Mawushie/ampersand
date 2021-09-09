@@ -8,7 +8,7 @@ const Input = (props) => {
                 <Text style = {styles.inputText}>{props.label}</Text>
 
                 <TextInput style = {styles.inputText2} placeholder = {props.placeholder}
-                          />
+                    />
             
             </View>
 
