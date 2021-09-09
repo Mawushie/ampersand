@@ -2,6 +2,8 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { View, Text, StyleSheet } from 'react-native'
 import Profile from '../components/Profile'
+// import {QRCode} from 'react-native-custom-qr-codes-expo'
+
 
 const QRCodeScreen = () => {
     return (
@@ -12,7 +14,7 @@ const QRCodeScreen = () => {
             </View>
 
             <View style = {styles.qrCodeContainer}>
-                <Text>QR Code to go here</Text>
+                {/* <QRCode content='https://reactnative.com'/> */}
             </View>
 
             <View style = {styles.profileContainer}>
