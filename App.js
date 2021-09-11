@@ -11,6 +11,8 @@ import SignIn from './src/screens/SignIn';
 import profileScreen from './src/screens/profileScreen';
 import { AntDesign } from '@expo/vector-icons';
 import QRCodeScreen from './src/screens/QRCodeScreen';
+import Scanner from './src/components/Scanner';
+import MemberProfile from './src/screens/MemberProfile';
 
 const Stack = createStackNavigator();
 
@@ -62,6 +64,16 @@ export default function App() {
                                     },}
                                   }
                         name = 'My Profile' component = {profileScreen}/>
+          
+          <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
+                                     headerTintColor: '#fff',
+                                    headerTitleStyle: {
+                                      fontSize: 18,
+                                    },}
+                                  }
+                        name = 'Member Profile' component = {MemberProfile}/>
+
+        <Stack.Screen  name = 'Scanner' component = {Scanner}/>
       </Stack.Navigator>
     </NavigationContainer>
    

@@ -4,8 +4,10 @@ import { View, Text, StyleSheet } from 'react-native'
 import Profile from '../components/Profile'
 import {QRCode} from 'react-native-custom-qr-codes-expo'
 
-
-const QRCodeScreen = () => {
+const QRCodeScreen = ({navigation}) => {
+    const handleClick = () =>{
+        navigation.navigate('Scanner')
+    }
     return (
          <View style = {styles.container}>
             <View style = {styles.textContainer}>
@@ -25,12 +27,11 @@ const QRCodeScreen = () => {
         
 
             <View style = {styles.border}>
-
             </View>
 
             <View style = {styles.scanQRContainer}>
                 <Text style = {styles.text3}>Want to add a new connection?</Text>
-                <TouchableOpacity style = {styles.scanQR}>
+                <TouchableOpacity style = {styles.scanQR} onPress = {handleClick}>
                     <Text style = {styles.text4}>Scan QR</Text>
                 </TouchableOpacity>
             </View>
@@ -66,12 +67,20 @@ const styles = StyleSheet.create({
     qrCodeContainer : {
         flex : 0.4,
         marginHorizontal : 40,
+        justifyContent : 'center',
+        alignItems : 'center',
     },
 
     profileContainer : {
         flex : 0.3,
         marginHorizontal : 40,
         paddingTop : 50,
+    },
+
+    border : {
+        width : '100%',
+        height : 1,
+        backgroundColor : 'lightgrey'
     },
 
     scanQRContainer : {
@@ -81,12 +90,6 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         marginHorizontal : 40,
         marginVertical : 12,
-    },
-
-    border : {
-        width : '100%',
-        height : 1,
-        backgroundColor : 'lightgrey'
     },
 
     text3 : {
