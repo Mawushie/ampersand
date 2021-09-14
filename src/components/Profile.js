@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     },
 
     image : {
-        width : '25%',
+        width : 80,
         height : 80,
-        borderRadius : 50
+        borderRadius : 40
     }, 
 
     textContainer : {
