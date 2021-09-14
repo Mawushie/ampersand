@@ -73,7 +73,7 @@ export default function App() {
                                   }
                         name = 'Member Profile' component = {MemberProfile}/>
 
-        <Stack.Screen  name = 'Scanner' component = {Scanner}/>
+        <Stack.Screen  options = { { header : () => null} } name = 'Scanner' component = {Scanner}/>
       </Stack.Navigator>
     </NavigationContainer>
    
