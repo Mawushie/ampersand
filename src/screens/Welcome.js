@@ -30,7 +30,7 @@ const Welcome = ({navigation}) => {
 
                 <TouchableOpacity onPress = {handleSignIn}>
                     <Text style = {styles.text3}>SIGN IN</Text>
-                    <View style = {styles.redLine}></View>
+                    <View style = {styles.redLine2}></View>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -79,6 +79,13 @@ const styles = StyleSheet.create({
 
     redLine : {
         width : 70,
+        height : 2,
+        backgroundColor : '#b30000',
+        marginTop : 5
+    },
+
+    redLine2 : {
+        width : 60,
         height : 2,
         backgroundColor : '#b30000',
         marginTop : 5

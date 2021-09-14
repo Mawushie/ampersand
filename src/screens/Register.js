@@ -4,6 +4,7 @@ import Input from '../components/Input'
 import { AntDesign } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import MyButton from '../components/MyButton';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 const Register = ({navigation}) => {
@@ -40,12 +41,12 @@ const Register = ({navigation}) => {
     };
   
     return (
-        <View style = {styles.container}>
+        <KeyboardAwareScrollView style = {styles.container}>
              <View style={styles.pickerContainer}>
                 <ImageBackground source={{ uri: image }} style={{ width: 400, height: 210 }}> 
                     <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                         <TouchableOpacity style={styles.pickerContainer}>
-                            <AntDesign name = "user" size = {50} color = "red" />
+                            <AntDesign name = "user" size = {50} color = "red" onPress={pickImage} />
                             <Text onPress={pickImage} style = {styles.text}>ADD PROFILE PHOTO</Text>
                             {image && <Image />}
                             
@@ -68,12 +69,7 @@ const Register = ({navigation}) => {
             <View style = {styles.buttonContainer}>
                 <MyButton  buttonText = 'REGISTER' onPress = {handleRegister}/>
             </View>
-        </View>
-       
-
-       
-        
-        
+        </KeyboardAwareScrollView>    
     )
 }
 

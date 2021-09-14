@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, Image, TouchableOpacity, StyleSheet, TextInpu
 import Input from '../components/Input'
 import MyButton from '../components/MyButton'
 import PasswordInput from '../components/PasswordInput'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const SignIn = ({navigation}) => {
 
@@ -11,29 +12,32 @@ const SignIn = ({navigation}) => {
     }
 
     return (
-        <SafeAreaView style = {styles.container}>
-            <View style = {styles.imageContainer}>
-                <Image source = {require('../../assets/coverphoto.jpeg')} style = {styles.image}></Image>
-            </View>
-
-            <View style = {styles.inputContainer}>
-                <Input label = 'Email' placeholder = 'mamhonyah@gmail.com' require/>
-                <PasswordInput label = 'Password'  placeholder = '.......'/>
-            </View>
-
-            <View style = {styles.buttonContainer}>
-                <MyButton buttonText = 'SIGN IN' onPress = {handleSignIn}/>
-            </View>
-
-            <View style = {styles.forgotPassword}>
-                <Text style = {styles.text}>Forgot? </Text>
-                    <View><Text style = {styles.text}>Reset Password</Text>
-                    <View style = {styles.redLine}></View>
+        <KeyboardAwareScrollView>
+            <SafeAreaView style = {styles.container}>
+                <View style = {styles.imageContainer}>
+                    <Image source = {require('../../assets/coverphoto.jpeg')} style = {styles.image}></Image>
                 </View>
-                
-            </View>
 
-    </SafeAreaView>
+                <View style = {styles.inputContainer}>
+                    <Input label = 'Email' placeholder = 'mamhonyah@gmail.com' require/>
+                    <PasswordInput label = 'Password'  placeholder = '.......'/>
+                </View>
+
+                <View style = {styles.buttonContainer}>
+                    <MyButton buttonText = 'SIGN IN' onPress = {handleSignIn}/>
+                </View>
+
+                <View style = {styles.forgotPassword}>
+                    <Text style = {styles.text}>Forgot? </Text>
+                        <View><Text style = {styles.text}>Reset Password</Text>
+                        <View style = {styles.redLine}></View>
+                    </View>
+                    
+                </View>
+
+            </SafeAreaView>
+        </KeyboardAwareScrollView>
+        
     )
 }
 

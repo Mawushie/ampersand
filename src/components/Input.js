@@ -7,7 +7,9 @@ const Input = (props) => {
             <View  style = {styles.inputContainer}>
                 <Text style = {styles.inputText}>{props.label}</Text>
 
-                <TextInput style = {styles.inputText2} placeholder = {props.placeholder}
+                <TextInput style = {styles.inputText2} 
+                        placeholder = {props.placeholder}
+                        textAlign = 'right'
                     />
             
             </View>
@@ -23,7 +25,6 @@ export default Input
 const styles = StyleSheet.create({
     inputContainer : {
         flexDirection : 'row',
-        justifyContent : 'space-between'
     },
 
     inputText : {
@@ -31,7 +32,8 @@ const styles = StyleSheet.create({
     },
 
     inputText2 : {
-        fontSize : 18
+        fontSize : 18,
+        flex : 1
     },
 
     thinLine : {

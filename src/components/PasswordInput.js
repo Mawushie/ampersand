@@ -7,8 +7,9 @@ const PasswordInput = (props) => {
             <View  style = {styles.inputContainer}>
                 <Text style = {styles.inputText}>{props.label}</Text>
                 <TextInput style = {styles.inputText2} placeholder = {props.placeholder}
-                        secureTextEntry={true}/>
-            
+                        secureTextEntry={true}
+                        textAlign = 'right'/>
+    
             </View>
 
             <View style = {styles.thinLine}></View>
@@ -22,7 +23,6 @@ export default PasswordInput
 const styles = StyleSheet.create({
     inputContainer : {
         flexDirection : 'row',
-        justifyContent : 'space-between'
     },
 
     inputText : {
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     },
 
     inputText2 : {
-        fontSize : 18
+        fontSize : 18,
+        flex : 1
     },
 
     thinLine : {
