@@ -64,37 +64,60 @@ export default function App() {
 
         <Stack.Screen options = {({navigation}) =>{
                       return {
-                        headerStyle : {backgroundColor : 'red', height : 120},
+                        headerStyle : { backgroundColor : 'red', height : 120},
                                        headerTintColor : 'white',
                                        headerTitleStyle: {
                                         fontSize: 18,
                                       },
                         headerRight : () =>{
-                          return (
+                      return (
                             <TouchableOpacity onPress = {() => navigation.navigate('My Profile')}
                               style = {{marginRight : 25}}>
                              <AntDesign name = "user" size = {20} color = "white" />
                             </TouchableOpacity>
                           )
+                        },
+                        headerLeft : () => null
                         }
-                       }
                        }
                       }               
                         name = 'CODETRAIN' component = {QRCodeScreen}/>
-         <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
+         <Stack.Screen options = {({navigation}) => {
+                      return { 
+                        headerStyle : { backgroundColor : 'red' , height : 120 }, 
                                      headerTintColor: '#fff',
                                     headerTitleStyle: {
                                       fontSize: 18,
-                                    },}
+                                    },
+                                    headerLeft : ({}) => (
+                                      <TouchableOpacity>
+                                          <FontAwesome name="long-arrow-left" size={24} color="white" 
+                                          style = {{marginLeft : 25}}
+                                          onPress = {() =>navigation.navigate('CODETRAIN')}/>
+                                      </TouchableOpacity>
+                                      
+                                    )}
                                   }
+                                }
                         name = 'My Profile' component = {profileScreen}/>
           
-          <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
+          <Stack.Screen options = {({navigation}) => {
+                      return { 
+                        headerStyle : { backgroundColor : 'red' , height : 120 }, 
                                      headerTintColor: '#fff',
                                     headerTitleStyle: {
                                       fontSize: 18,
-                                    },}
+                                    },
+                                    headerLeft : ({}) => (
+                                      <TouchableOpacity>
+                                          <FontAwesome name="long-arrow-left" size={24} color="white" 
+                                          style = {{marginLeft : 25}}
+                                          onPress = {() =>navigation.navigate('Scanner')}/>
+                                      </TouchableOpacity>
+                                      
+                                    )}
                                   }
+                            }
                         name = 'Member Profile' component = {MemberProfile}/>
 
         <Stack.Screen  options = { { header : () => null} } name = 'Scanner' component = {Scanner}/>
