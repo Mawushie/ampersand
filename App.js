@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {StyleSheet, TouchableOpacity, } from 'react-native';
 import GetStarted from './src/screens/GetStarted';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,6 +12,7 @@ import { AntDesign } from '@expo/vector-icons';
 import QRCodeScreen from './src/screens/QRCodeScreen';
 import Scanner from './src/components/Scanner';
 import MemberProfile from './src/screens/MemberProfile';
+import { FontAwesome } from '@expo/vector-icons'
 
 const Stack = createStackNavigator();
 
@@ -23,23 +23,47 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen  options = { { header : () => null} } name = 'Get Started' component = {GetStarted}/>
         <Stack.Screen  options = { { header : () => null} } name = 'Welcome' component = {Welcome}/>
-        <Stack.Screen  options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
+        <Stack.Screen  options = {({navigation}) =>{
+                          return { 
+                                  headerStyle : { backgroundColor : 'red' , height : 120 }, 
                                      headerTintColor: '#fff',
                                     headerTitleStyle: {
                                       fontSize: 18,
-                                    },}
-                                  }  
-                       name = 'Register' component = {Register}/>
-        <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
-                                     headerTintColor: '#fff',
-                                    headerTitleStyle: {
-                                      fontSize: 18,
-                                    },}
+                                    },
+                                    headerLeft : () => (
+                                      <TouchableOpacity>
+                                          <FontAwesome name="long-arrow-left" size={24} color="white" 
+                                          style = {{marginLeft : 25}}
+                                          onPress = {() =>navigation.navigate('Welcome')}
+                                          />
+                                      </TouchableOpacity>
+                                      
+                                    )}
                                   }
+                                } 
+                       name = 'Register' component = {Register}/>
+
+        <Stack.Screen options = {({navigation}) => {
+                        return {
+                                   headerStyle : { backgroundColor : 'red' , height : 120 }, 
+                                     headerTintColor: '#fff',
+                                    headerTitleStyle: {
+                                      fontSize: 18,
+                                    },
+                                    headerLeft : ({}) => (
+                                      <TouchableOpacity>
+                                          <FontAwesome name="long-arrow-left" size={24} color="white" 
+                                          style = {{marginLeft : 25}}
+                                          onPress = {() =>navigation.navigate('Welcome')}/>
+                                      </TouchableOpacity>
+                                      
+                                    )}
+                                  } 
+                                }           
                         name = 'SignIn' component = {SignIn}/>
 
         <Stack.Screen options = {({navigation}) =>{
-                      return{
+                      return {
                         headerStyle : {backgroundColor : 'red', height : 120},
                                        headerTintColor : 'white',
                                        headerTitleStyle: {
@@ -53,9 +77,9 @@ export default function App() {
                             </TouchableOpacity>
                           )
                         }
-                      }
-         }
-        }               
+                       }
+                       }
+                      }               
                         name = 'CODETRAIN' component = {QRCodeScreen}/>
          <Stack.Screen options = { { headerStyle : { backgroundColor : 'red' , height : 120 }, 
                                      headerTintColor: '#fff',
